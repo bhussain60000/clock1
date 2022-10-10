@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Java Clock</title>
+    <link rel="icon" type="image/x-icon" href="/pix.avif">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alkalami&family=Bungee+Spice&family=Oswald:wght@200;300;400&family=Roboto:wght@100&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    header nav{
+        height: 50px;
+    }
+    #time{
+        /* border: 2px solid black; */
+        background-color: black;
+        color: white;
+        font-style: italic;
+    }
+    .foot{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 90px;
+        /* background-color: blueviolet; */
+        font-family: 'Oswald', sans-serif;
+    }
+    .container{
+        display: flex;
+        justify-content: center;
+        /* margin-top: -4.5rem; */
+        /* margin: -40px; */
+        min-height: calc(100vh - 90px - 50px);
+    }
+    .container h1{
+        font-family: 'Alkalami', serif;
+    }
+  </style>
+  <body>
+    <header>
+    <nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><b>CLOCK </b> </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbarsExample02">
+            <ul class="navbar-nav me-auto">
+              <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li> -->
+              
+            </ul>
+            
+          </div>
+        </div>
+      </nav>
+    </header>
+      <div class="container my-4">
+      <div class="text-center">
+        <img class="d-block mx-auto mb-4" src="pix1.avif" alt="" width="172" height="97">
+        <h1 class="display-5 fw-bold">Pakistan's Time: <br> </h1> <span id="time" class="display-5 fw-bold"></span> <br><br>
+        <div class="col-lg-6 mx-auto">
+            <p class="lead mb-4">A clock or a timepiece is a device used to measure and indicate time. The clock is one of the oldest human inventions, meeting the need to measure intervals of time shorter than the natural units such as the day, the lunar month and the year. Devices operating on several physical processes have been used over the millennia.</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        </div>
+            
+          </div>
+        </div>
+      </div>
+    <script>
+        setInterval(() => {
+            
+        
+        let a = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        let date = a.toLocaleDateString(undefined,options);
+        let time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+        document.getElementById('time').innerHTML= time + "<br> " + date ;
+        
+    }, 1000);
+    
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <footer>
+        <div class="foot">
+            <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+                <p><b> © 2022 CLOCK, Inc. All rights reserved. </b></p>
+                <ul class="list-unstyled d-flex">
+                  <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
+                  <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+                </ul>
+              </div>
+        </div>
+    </footer>
+  </body>
+</html>
